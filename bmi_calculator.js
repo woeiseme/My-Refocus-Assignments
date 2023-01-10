@@ -17,32 +17,35 @@ function bmiCalculator(weight, height) {
     } else {
         var bmi = weight / (height * height);
         if (bmi < 18.5) {
-            return "Underweight, BMI: "+bmi.toFixed(1);
+            return "Underweight, BMI: " + bmi.toFixed(1);
         } else if (bmi >= 18.5 && bmi <= 24.9) {
-            return "Normal weight, BMI: "+bmi.toFixed(1);
+            return "Normal weight, BMI: " + bmi.toFixed(1);
         } else if (bmi >= 25 && bmi <= 29.9) {
-            return "Overweight, BMI: "+bmi.toFixed(1);
+            return "Overweight, BMI: " + bmi.toFixed(1);
         } else {
-            return "Obesity, BMI: "+bmi.toFixed(1);
+            return "Obesity, BMI: " + bmi.toFixed(1);
         }
     }
 }
 
 
 
-console.log(bmiCalculator(71, 1.80)); 
+
+console.log(bmiCalculator(71, 1.73)); 
 
 
 function testBMI(){
     const result = bmiCalculator(71, 1.80);
-    const expected = 21.9;
-    
-    
-    
+    const expected = 23.7;
+
     console.assert(
     result === expected,
     `The result ${result} doesn't match the expected value ${expected}`
     )
 }
 
-console.log(testBMI())
+
+
+
+module.exports = bmiCalculator;
+
